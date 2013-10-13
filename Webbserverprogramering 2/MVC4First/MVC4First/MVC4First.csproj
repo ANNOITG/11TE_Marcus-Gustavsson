@@ -169,6 +169,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201310101156447_AddRatingMig.cs" />
+    <Compile Include="Migrations\201310101156447_AddRatingMig.Designer.cs">
+      <DependentUpon>201310101156447_AddRatingMig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201310131935542_AddDataAnnotationsMig.cs" />
+    <Compile Include="Migrations\201310131935542_AddDataAnnotationsMig.Designer.cs">
+      <DependentUpon>201310131935542_AddDataAnnotationsMig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Movie.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -228,7 +237,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
-    <Content Include="favicon.ico" />
+    <Content Include="Views\favicon.ico" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
@@ -298,6 +307,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201310101156447_AddRatingMig.resx">
+      <DependentUpon>201310101156447_AddRatingMig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201310131935542_AddDataAnnotationsMig.resx">
+      <DependentUpon>201310131935542_AddDataAnnotationsMig.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
