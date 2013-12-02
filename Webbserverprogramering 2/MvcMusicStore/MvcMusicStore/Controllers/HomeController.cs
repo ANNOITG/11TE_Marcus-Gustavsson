@@ -14,6 +14,5 @@ namespace MvcMusicStore.Controllers
         {
             return View();
         }
-
     }
 }
