@@ -1,0 +1,18 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+
+@if (User.Identity.IsAuthenticated == true)
+{
+    <p>User is authenticated.</p>
+}
+else
+{
+    <p>User is not authenticated.</p>
+}
+
+Go to post to read, create, edit and delete data.
+
+Username: marcus
+Password: marcus

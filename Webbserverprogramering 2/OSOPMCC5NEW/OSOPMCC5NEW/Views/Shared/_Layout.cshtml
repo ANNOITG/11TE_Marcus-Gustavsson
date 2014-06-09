@@ -1,0 +1,106 @@
+﻿@using Microsoft.AspNet.Identity
+@{
+
+}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    @*<link href="~/Content/Site.css" rel="stylesheet" type="text/css" />*@
+    <link href="http://fonts.googleapis.com/css?family=Amatic+SC" rel='stylesheet' type='text/css'>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+
+    <div id="pageWrap">
+        @Html.ActionLink("One Sheet Of Paper", "Index", "Home", null, new { id = "title" })
+
+        <!--<a id="title" href="~/Index.cshtml">One Sheet Of Paper</a>-->
+
+        <!--Main menu!-->
+        <div id="MainMenuDiv">
+            <ul id="menuLinksList1">
+                <li>@Html.ActionLink("Front", "Index", "Home")</li>
+                <li>@Html.ActionLink("Post", "Index", "Post")</li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
+                <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+            </ul>
+            <ul id="menuLinksList2">
+                @Html.Partial("_LoginPartial")
+            </ul>
+        </div>
+        <!--End main menu!-->
+
+        <div id="contentOuterDiv">
+            <div class="content">
+                <div class="contentWrap">
+                    <div class="contentInner">
+                        @RenderBody()
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h6 id="copyRight">&copy; @DateTime.Now.Year - Johan Marcus Tony Gustavsson. All rights reserved.</h6>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+
+
+
+
+
+
+
+@*<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", null, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>*@

@@ -1,0 +1,25 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Request.IsAuthenticated)
+{
+    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+    {
+    @Html.AntiForgeryToken()
+    
+    // Determine whether current user is in Admin role
+    if (User.IsInRole("Admin"))
+    {
+        <li>@Html.ActionLink("Admin", "Admin", "Home")</li>
+    }
+    
+    <li>
+        @Html.ActionLink(User.Identity.GetUserName(), "Manage", "Account")
+    </li>
+    
+    <li><a href="javascript:document.getElementById('logoutForm').submit()">Log&thinsp;out</a></li>
+    }
+}
+else
+{
+    <li>@Html.ActionLink("Register", "Register", "Account")</li>
+    <li>@Html.ActionLink("Log\u2009in", "Login", "Account")</li>
+}
